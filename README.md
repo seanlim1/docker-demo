@@ -71,6 +71,13 @@ docker compose up -d
 docker compose down
 ```
 
+## Clean up
+``` bash
+docker volume prune
+docker network prune
+```
+
 ## Reference
-- [Docker overview](https://docs.docker.com/get-started/overview/)
-- [Docker commands](https://docs.docker.com/engine/reference/commandline/cli/) 
+- [Docker Overview](https://docs.docker.com/get-started/overview/)
+- [Docker Commands](https://docs.docker.com/engine/reference/commandline/cli/) 
+- [Docker Compose](https://docs.docker.com/compose/)
