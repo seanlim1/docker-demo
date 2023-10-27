@@ -76,7 +76,7 @@ docker compose down
 
 ## Clean up
 ``` bash
-docker rm -f $(docker ps -a) # remove all containers
+docker rm -f $(docker ps -aq) # remove all containers
 docker volume prune # remove dangling volumes
 docker network prune # remove dangling networks
 ```
