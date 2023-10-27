@@ -43,9 +43,9 @@ docker run --mount type=volume,src=demo,target=/tmp -d alpine sleep 99999
 docker exec -it <containerID> sh
 
 # Task: Verify that /app/demo directory in the containers are empty
-# Task: Within one of the contaioner, create a file to the /app/demo. Then verify on the other container.
+# Task: Exec into either container, create a file to the /app/demo. Then verify on the other container.
 # Task: Stop and remove containers
-# Task: Remove network
+# Task: Remove volume
 ```
 
 ## Networks
@@ -60,7 +60,7 @@ docker exec -it <containerID> sh
 
 # Task: Using netshoot, make a request to flask app
 # Task: View the logs of flask app
-# Task: Create netshoot container in detached mode, to make a request to flask app (every 1 second)
+# Task: Create netshoot container in detached mode. It should to make a request to flask app (every 1 second)
 # Task: Stop and remove containers
 # Task: Remove network
 ```
@@ -73,8 +73,9 @@ docker compose down
 
 ## Clean up
 ``` bash
-docker volume prune
-docker network prune
+docker rm -f $(docker ps -a) # remove all containers
+docker volume prune # remove dangling volumes
+docker network prune # remove dangling networks
 ```
 
 ## Reference
