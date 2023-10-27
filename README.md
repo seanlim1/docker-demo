@@ -8,7 +8,7 @@ docker rm <containerID>
 ```
 
 ## Images
-Pull the following images and compare them:
+Pull the following images and compare them
 - alpine
 - ubuntu
 - nicolaka/netshoot
@@ -42,8 +42,8 @@ docker run --mount type=volume,src=demo,target=/tmp -d alpine sleep 99999
 docker run --mount type=volume,src=demo,target=/tmp -d alpine sleep 99999
 docker exec -it <containerID> sh
 
-# Task: Verify that /app/demo directory in the containers are empty
-# Task: Exec into either container, create a file to the /app/demo. Then verify on the other container.
+# Task: Verify that /tmp directory in the containers are empty
+# Task: Exec into either container, create a file to the /tmp. Then verify on the other container.
 # Task: Stop and remove containers
 # Task: Remove volume
 ```
