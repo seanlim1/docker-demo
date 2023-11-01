@@ -16,6 +16,7 @@ Pull the following images and compare them
 ``` bash
 docker images
 docker pull <imageName>
+# Task: Show all images, and comment on the effect of image sizes. How would it affect container start up time?
 ```
 
 ## Exec
@@ -58,7 +59,7 @@ docker run --network demo -d -p 8080:8080 flask-app
 docker run --network demo -d nicolaka/netshoot sleep 99999
 docker exec -it <containerID> sh
 
-# Task: Using netshoot, make a curl request to flask app
+# Task: Using netshoot, make a curl request to flask app (Hint: How do you get the ip for a machine)
 # Task: View the logs of flask app
 # Task: Create netshoot container in detached mode. It should to make a request to flask app (every 1 second)
 # Task: Stop and remove containers
@@ -68,8 +69,8 @@ docker exec -it <containerID> sh
 ## Docker Compose
 ``` bash
 docker compose up -d
-# Task: Exec into netshoot container and make a curl request to http://app:8080. What is happening?
-# Task: Update an environment variable in the compose file and rerun `docker compose up -d`. What happened?
+# Task: Exec into netshoot container and make a curl request to http://app:8080. What is happening? (Hint: Investigate compose.yaml)
+# Task: Update an environment variable in the compose file and rerun `docker compose up -d`. Do all containers get recreated?
 
 docker compose down
 ```
