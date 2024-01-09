@@ -8,7 +8,7 @@ docker rm <containerID>
 ```
 
 ## Images
-Pull the following images and compare them:
+Pull the following images and compare them
 - alpine
 - ubuntu
 - nicolaka/netshoot
@@ -16,6 +16,7 @@ Pull the following images and compare them:
 ``` bash
 docker images
 docker pull <imageName>
+# Task: Show all images, and comment on the effect of image sizes. How would it affect container start up time?
 ```
 
 ## Exec
@@ -44,8 +45,8 @@ docker run --mount type=volume,src=demo,target=/tmp -d alpine sleep 99999
 docker run --mount type=volume,src=demo,target=/tmp -d alpine sleep 99999
 docker exec -it <containerID> sh
 
-# Task: Verify that /app/demo directory in the containers are empty
-# Task: Exec into either container, create a file to the /app/demo. Then verify on the other container.
+# Task: Verify that /tmp directory in the containers are empty
+# Task: Exec into either container, create a file to the /tmp. Then verify on the other container.
 # Task: Stop and remove containers
 # Task: Remove volume
 ```
@@ -60,7 +61,7 @@ docker run --network demo -d -p 8080:8080 flask-app
 docker run --network demo -d nicolaka/netshoot sleep 99999
 docker exec -it <containerID> sh
 
-# Task: Using netshoot, make a request to flask app
+# Task: Using netshoot, make a curl request to flask app (Hint: How do you get the ip for a machine)
 # Task: View the logs of flask app
 # Task: Create netshoot container in detached mode. It should to make a request to flask app (every 1 second)
 # Task: Stop and remove containers
@@ -70,12 +71,15 @@ docker exec -it <containerID> sh
 ## Docker Compose
 ``` bash
 docker compose up -d
+# Task: Exec into netshoot container and make a curl request to http://app:8080. What is happening? (Hint: Investigate compose.yaml)
+# Task: Update an environment variable in the compose file and rerun `docker compose up -d`. Do all containers get recreated?
+
 docker compose down
 ```
 
 ## Clean up
 ``` bash
-docker rm -f $(docker ps -a) # remove all containers
+docker rm -f $(docker ps -aq) # remove all containers
 docker volume prune # remove dangling volumes
 docker network prune # remove dangling networks
 ```

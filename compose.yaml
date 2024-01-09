@@ -7,7 +7,6 @@ services:
       APP_NAME: flask
     deploy:
       replicas: 2
-      endpoint_mode: dnsrr
   consumer:
     image: nicolaka/netshoot
     command: sh -c "while true; do sleep 3; curl -s http://app:8080; done"
