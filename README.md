@@ -25,7 +25,6 @@ docker run -d nicolaka/netshoot sleep 99999
 docker exec -it <containerID> sh
 ```
 
-"Happy New Year"
 
 ## Run Binaries
 ``` bash
